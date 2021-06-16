@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Navigation from "./components/molecules/navigation";
+import LogoDark from './assets/images/logo-dark.png'
+import styled from "styled-components";
+import {breakpoint} from "./styles/Style";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <LogoDarkStyle src={LogoDark} />
+      <Navigation />
     </div>
   );
 }
+
+const LogoDarkStyle = styled.img`
+  margin: 15px 0 0 15px;
+  display: none;
+
+  @media (max-width: ${breakpoint.medium}){
+    display: block;
+  }
+`;
 
 export default App;
